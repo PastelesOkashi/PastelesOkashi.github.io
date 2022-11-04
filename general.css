@@ -49,8 +49,9 @@
 }
 
 .ig > a > img {
-    width: 30%;
+    width: 20%;
 }
-.ig {
-    margin: auto auto;
+
+.ig > .titulo {
+    text-align: start;
 }
