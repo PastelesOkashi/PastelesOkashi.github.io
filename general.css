@@ -11,7 +11,9 @@
     font-size: 240%;
     color: var(--negro-2);
 }
-
+html {
+    scroll-behavior: smooth;
+  }
 .entrada > h3 {
     font-family: Arial, Helvetica, sans-serif;
     padding-bottom: 17%;

@@ -119,5 +119,9 @@
 
 body {
     background: rgb(71,42,23);
-    background: linear-gradient(27deg, rgba(71,42,23,1) 0%, rgba(125,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    background: linear-gradient(0deg, rgba(71,42,23,1) 0%, rgba(125,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+html {
+    background: white;
+    padding: .02%;
 }
