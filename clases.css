@@ -1,0 +1,107 @@
+:root {
+    --negro: rgb(26 26 26);
+    --amarillo: rgb(255 193 7);
+    --negro-2: rgb(0, 0, 0);
+    --bg-pasteles: rgb(48 7 0);
+    --bg-plomo: rgb(172, 172, 172);
+}
+
+.entrada {
+    background-image: url(img/inicio.jpg);
+    width: 100%;
+
+    opacity: 75%;
+    margin: 0 auto;
+
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    text-align: center;
+
+    grid-area: entrada;
+}
+
+.nav1 {
+
+    background-color: black;
+    margin-bottom: 2%;
+    grid-area: na;
+    position: sticky;
+    top: 3%;
+    margin-left: 2%;
+}
+
+.local {
+    display: none;
+
+    margin: 0 auto;
+    grid-area: local;
+}
+
+.principal {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 5% auto auto;
+    grid-template: 
+    "na na na"
+    "entrada entrada entrada";
+}
+
+
+.productos {
+    display: none;
+}
+
+.vision {
+    display: none;
+}
+.nosotros {
+    display: none;
+}
+
+.templateCords {
+    margin-top: 7%;
+    grid-area: 3 / 1 / 4 / 4 ;
+}
+
+.titulo {
+    padding-top: 1%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 240%;
+    color: var(--negro-2);
+    text-align: center;
+}
+
+.nosP, .myv > p {
+    margin: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 220%;
+    color: var(--negro);
+    text-align: center;
+    background-color: #ffffff8a;
+    padding: 2%;
+}
+
+.ig {
+    grid-area: insta
+}
+.mapa {
+    grid-area: map;
+
+}
+.mapa > h1 {
+    margin-bottom: 10px;
+}
+
+.local {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-template: 
+    "insta map";
+    margin-bottom: 5%;
+}
+
+body {
+    background: rgb(71,42,23);
+    background: linear-gradient(27deg, rgba(71,42,23,1) 0%, rgba(125,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}

@@ -1,0 +1,56 @@
+:root {
+    --negro: rgb(26 26 26);
+    --amarillo: rgb(102, 82, 21);
+    --negro-2: rgb(0, 0, 0);
+    --bg-pasteles: rgb(48 7 0);
+}
+
+.entrada > h1 {
+    padding-top: 19%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 240%;
+    color: var(--negro-2);
+}
+
+.entrada > h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 17%;
+    padding-top: 2%;
+    font-size: 150%;
+    color: var(--negro-2);
+}
+
+.local > div > h1 {
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--negro-2);
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.prod > img {
+    height: 150px;
+    margin: 13px auto;
+    border-radius: 10%;
+
+}
+.prod > p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    color: aliceblue;
+    margin: auto 0;
+}
+.prod > p > span {
+    color: var(--amarillo);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    margin: auto 0;
+}
+
+.ig > a > img {
+    width: 30%;
+}
+.ig {
+    margin: auto auto;
+}

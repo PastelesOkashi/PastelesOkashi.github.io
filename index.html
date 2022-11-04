@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="clases.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="template.css">
+    <script>
+        var nn = "display:none;";
+        var gr = "display:grid;";
+        var bl = "display: block;";
+        function he1(id){// de help ayuda
+            return document.getElementById(id)
+        }
+        function Dproductos(){
+            he1("c2").setAttribute("style", nn);
+            he1("c3").setAttribute("style", nn);
+            he1("c4").setAttribute("style", nn);
+
+            he1("c1").setAttribute("style", bl);
+        }
+        function Dcontacto(){
+            he1("c1").setAttribute("style", nn);
+            he1("c3").setAttribute("style", nn);
+            he1("c4").setAttribute("style", nn);
+
+            he1("c2").setAttribute("style", gr)
+        }
+        function Dvision(){
+            he1("c1").setAttribute("style", nn);
+            he1("c2").setAttribute("style", nn);
+            he1("c4").setAttribute("style", nn);
+
+            he1("c3").setAttribute("style", bl);
+        }
+        function Dnosotros(){
+            he1("c1").setAttribute("style", nn);
+            he1("c3").setAttribute("style", nn);
+            he1("c2").setAttribute("style", nn);
+
+            he1("c4").setAttribute("style", bl);
+        }
+    </script>
+</head>
+<body>
+    <div class="principal">
+
+        <div class="entrada">
+            <h1>Pasteles Okashi</h1>
+            <h3>Dulces japoneses, símbolo de perfección y belleza.</h3>
+        </div>
+
+<!--.......................................................................................... -->
+        <div class="productos templateCords" id="c1">
+            <h1 class="titulo">Productos</h1>
+            <div class="prod">
+
+                <img src="img/baumkuchen.jpg" class="i1">
+                <p class="p1">
+                    <span>Descripcion:</span><br><br>Está formado por capas finas y se acompaña con helado y chocolate caliente por encima.
+
+                </p>
+
+                <div class="brd"></div>
+
+                <img src="img/cheesecake.jpg" class="i2">
+                <p class="p2">
+                    <span>Descripcion:</span><br><br>Bizcocho muy suave y esponjoso.
+                </p>
+
+                <div class="brd"></div>
+
+                <img src="img/daifuku.jpg" class="i3">
+                <p class="p3">
+                    <span>Descripcion:</span><br><br>Conocido como “Mochi”, dulce popular en Japón. Relleno con judía roja. 
+                </p>
+
+                <div class="brd"></div>
+
+                <img src="img/dango.jpg" class="i4">
+                <p class="p4">
+                    <span>Descripcion:</span><br><br>Bolitas de harina de arroz, de distintos colores.
+                </p>
+
+                <div class="brd"></div>
+
+                <img src="img/dorayaki.jpg" class="i5">
+                <p class="p5">
+                    <span>Descripcion:</span><br><br>Bizcocho relleno con pasta de judías rojas.
+                </p>
+
+
+
+                <img src="img/namagashi.jpg" class="i6">
+                <p class="p6">
+                    <span>Descripcion:</span><br><br>Dulce agradable visualmente que se diseña según la estación del año.
+                </p>
+
+
+
+                <img src="img/Swiss.jpg" class="i7">
+                <p class="p7">
+                    <span>Descripcion:</span><br><br>Es un pastel alargado, enrollado y relleno. Arriba  se le pone mermelada o chocolate. 
+                </p>
+
+
+
+                <img src="img/taiyaki.jpg" class="i8">
+                <p class="p8">
+                    <span>Descripcion:</span><br><br>Pastel en forma de pez, relleno con judías rojas o también una bola de helado. 
+                </p>
+
+            </div>
+        </div>
+
+        <div class="local templateCords" id="c2">
+
+            <div class="mapa">
+                <h1>Mapa</h1>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.5128331988144!2d-70.656235485046!3d-33.48803218076314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5331ed1296d%3A0x43cf8476e77bcb23!2sRey%20Alberto%203799%2C%208910166%20San%20Miguel%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1667196779858!5m2!1ses-419!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="ig">
+                <h1 class="titulo">Síguenos en instagram</h1>
+                <a href="https://www.instagram.com/pasteleria.okashi_/" target="_blank">
+                    <img src="img/instagram.png">
+                </a>
+            </div>
+        </div>
+
+        <div class="vision templateCords" id="c3">
+            <h1 class="titulo">Vision y Mision</h1>
+            <div class="myv">
+                <p>
+                    La misión de okashi es brindar el mejor servicio, valor y experiencia a nuestros clientes
+                     y así puedan adquirir  una parte de esta exquisita pastelería japonesa respetando su tradición 
+                     y con esto lograr nuestra visión de ser el mejor  local de pastelería japonesa a nivel país.
+                </p>
+            </div>
+        </div> 
+
+        <div class="nosotros templateCords" id="c4">
+            <h1 class="titulo">Nosotros</h1>
+            <div class="nosP">
+                <p>
+                    Pasteles Okashi, es el proyecto decidido ya que nos agrada la realización de distintos tipos de dulces y 
+                    más si es del estilo japonés, por su delicadeza y por el impacto visual que da al público. Tener un local 
+                    que ofrezca y donde se realice distintos tipos de dulces japonés no es tan común, ya que son dulces 
+                    y pasteles del estilo clásico japonés, aunque además se puede hacer pasteles temáticos si el cliente 
+                    lo solicita. Nos gusta también tener un negocio el cual no necesite de tanto personal ni un espacio 
+                    enorme donde poder realizar todo. 
+                </p>
+            </div>
+        </div>
+<!--.......................................................................................... -->
+        <div class="nav1">
+            <nav class="navMenu">
+                <a onclick="Dproductos()">Productos</a>
+                <a onclick="Dcontacto()">Contacto y ubicacion</a>
+                <a onclick="Dvision()">Vision y mision</a>
+                <a onclick="Dnosotros()">Nosotros</a>
+                <div class="dot"></div>
+            </nav>
+        </div>
+    </div>
+</body>
+</html>

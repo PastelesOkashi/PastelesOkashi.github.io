@@ -1,0 +1,88 @@
+
+.prod {
+    display: grid;
+    grid-template-columns: 10% auto;
+    grid-template-rows: repeat(8, auto);
+
+    width: 100%;
+    margin-top: 1%;
+    grid-template: 
+        "ii1 pp1"
+        "ii2 pp2"
+        "ii3 pp3"
+        "ii4 pp4"
+        "ii5 pp5"
+        "ii6 pp6"
+        "ii7 pp7"
+        "ii8 pp8";
+}
+.brd {
+    border: solid 1px black;
+    width: 70%;
+    height: .5%;
+}
+
+.i1 {
+    grid-area: ii1;
+}
+
+.p1 {
+    grid-area: pp1;
+}
+
+.i2 {
+    grid-area: ii2;
+}
+
+.p2 {
+    grid-area: pp2;
+}
+
+.i3 {
+    grid-area: ii3;
+}
+
+.p3 {
+    grid-area: pp3;
+}
+
+.i4 {
+    grid-area: ii4;
+}
+
+.p4 {
+    grid-area: pp4;
+}
+
+.i5 {
+    grid-area: ii5;
+}
+
+.p5 {
+    grid-area: pp5;
+}
+
+.i6 {
+    grid-area: ii6;
+}
+
+.p6 {
+    grid-area: pp6;
+}
+
+.i7 {
+    grid-area: ii7;
+}
+
+.p7 {
+    grid-area: pp7;
+}
+
+.i8 {
+    grid-area: ii8;
+}
+
+.p8 {
+    grid-area: pp8;
+}
+
