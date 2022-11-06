@@ -13,7 +13,13 @@
 }
 html {
     scroll-behavior: smooth;
-  }
+    background: white;
+    padding: .02%;
+}
+body {
+    background: rgb(71,42,23);
+    background: linear-gradient(0deg, rgba(71,42,23,1) 0%, rgba(125,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
 .entrada > h3 {
     font-family: Arial, Helvetica, sans-serif;
     padding-bottom: 17%;
@@ -53,7 +59,13 @@ html {
 .ig > a > img {
     width: 20%;
 }
-
-.ig > .titulo {
-    text-align: start;
+.nosP, .myv > p {
+    margin: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 220%;
+    color: var(--negro);
+    text-align: center;
+}
+.mapa > h1 {
+    margin-bottom: 10px;
 }

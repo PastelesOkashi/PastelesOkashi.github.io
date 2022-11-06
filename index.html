@@ -44,6 +44,183 @@
             he1("c4").setAttribute("style", bl);
         }
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        // Variables
+        const baseDeDatos = [
+            {
+                id: 1,
+                nombre: 'Patata',
+                precio: 1,
+                imagen: 'img/baumkuchen.jpg'
+            },
+            {
+                id: 2,
+                nombre: 'Cebolla',
+                precio: 1.2,
+                imagen: 'img/cheesecake.jpg'
+            },
+            {
+                id: 3,
+                nombre: 'Calabacin',
+                precio: 2.1,
+                imagen: 'img/daifuku.jpg'
+            },
+            {
+                id: 4,
+                nombre: 'Fresas',
+                precio: 0.6,
+                imagen: 'img/dango.jpg'
+            }
+
+        ];
+
+        let carrito = [];
+        const divisa = '€';
+        const DOMitems = document.querySelector('#items');
+        const DOMcarrito = document.querySelector('#carrito');
+        const DOMtotal = document.querySelector('#total');
+        const DOMbotonVaciar = document.querySelector('#boton-vaciar');
+
+        // Funciones
+
+        /**
+         * Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
+         */
+        function renderizarProductos() {
+            baseDeDatos.forEach((info) => {
+                // Estructura
+                const miNodo = document.createElement('div');
+                miNodo.classList.add('card', 'col-sm-4');
+                // Body
+                const miNodoCardBody = document.createElement('div');
+                miNodoCardBody.classList.add('card-body');
+                // Titulo
+                const miNodoTitle = document.createElement('h5');
+                miNodoTitle.classList.add('card-title');
+                miNodoTitle.textContent = info.nombre;
+                // Imagen
+                const miNodoImagen = document.createElement('img');
+                miNodoImagen.classList.add('img-fluid');
+                miNodoImagen.setAttribute('src', info.imagen);
+                // Precio
+                const miNodoPrecio = document.createElement('p');
+                miNodoPrecio.classList.add('card-text');
+                miNodoPrecio.textContent = `${info.precio}${divisa}`;
+                // Boton 
+                const miNodoBoton = document.createElement('button');
+                miNodoBoton.classList.add('btn', 'btn-primary');
+                miNodoBoton.textContent = '+';
+                miNodoBoton.setAttribute('marcador', info.id);
+                miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
+                // Insertamos
+                miNodoCardBody.appendChild(miNodoImagen);
+                miNodoCardBody.appendChild(miNodoTitle);
+                miNodoCardBody.appendChild(miNodoPrecio);
+                miNodoCardBody.appendChild(miNodoBoton);
+                miNodo.appendChild(miNodoCardBody);
+                DOMitems.appendChild(miNodo);
+            });
+        }
+
+        /**
+         * Evento para añadir un producto al carrito de la compra
+         */
+        function anyadirProductoAlCarrito(evento) {
+            // Anyadimos el Nodo a nuestro carrito
+            carrito.push(evento.target.getAttribute('marcador'))
+            // Actualizamos el carrito 
+            renderizarCarrito();
+
+        }
+
+        /**
+         * Dibuja todos los productos guardados en el carrito
+         */
+        function renderizarCarrito() {
+            // Vaciamos todo el html
+            DOMcarrito.textContent = '';
+            // Quitamos los duplicados
+            const carritoSinDuplicados = [...new Set(carrito)];
+            // Generamos los Nodos a partir de carrito
+            carritoSinDuplicados.forEach((item) => {
+                // Obtenemos el item que necesitamos de la variable base de datos
+                const miItem = baseDeDatos.filter((itemBaseDatos) => {
+                    // ¿Coincide las id? Solo puede existir un caso
+                    return itemBaseDatos.id === parseInt(item);
+                });
+                // Cuenta el número de veces que se repite el producto
+                const numeroUnidadesItem = carrito.reduce((total, itemId) => {
+                    // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
+                    return itemId === item ? total += 1 : total;
+                }, 0);
+                // Creamos el nodo del item del carrito
+                const miNodo = document.createElement('li');
+                miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
+                miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
+                // Boton de borrar
+                const miBoton = document.createElement('button');
+                miBoton.classList.add('btn', 'btn-danger', 'mx-5');
+                miBoton.textContent = 'X';
+                miBoton.style.marginLeft = '1rem';
+                miBoton.dataset.item = item;
+                miBoton.addEventListener('click', borrarItemCarrito);
+                // Mezclamos nodos
+                miNodo.appendChild(miBoton);
+                DOMcarrito.appendChild(miNodo);
+            });
+            // Renderizamos el precio total en el HTML
+            DOMtotal.textContent = calcularTotal();
+        }
+
+        /**
+         * Evento para borrar un elemento del carrito
+         */
+        function borrarItemCarrito(evento) {
+            // Obtenemos el producto ID que hay en el boton pulsado
+            const id = evento.target.dataset.item;
+            // Borramos todos los productos
+            carrito = carrito.filter((carritoId) => {
+                return carritoId !== id;
+            });
+            // volvemos a renderizar
+            renderizarCarrito();
+        }
+
+        /**
+         * Calcula el precio total teniendo en cuenta los productos repetidos
+         */
+        function calcularTotal() {
+            // Recorremos el array del carrito 
+            return carrito.reduce((total, item) => {
+                // De cada elemento obtenemos su precio
+                const miItem = baseDeDatos.filter((itemBaseDatos) => {
+                    return itemBaseDatos.id === parseInt(item);
+                });
+                // Los sumamos al total
+                return total + miItem[0].precio;
+            }, 0).toFixed(2);
+        }
+
+        /**
+         * Varia el carrito y vuelve a dibujarlo
+         */
+        function vaciarCarrito() {
+            // Limpiamos los productos guardados
+            carrito = [];
+            // Renderizamos los cambios
+            renderizarCarrito();
+        }
+
+        // Eventos
+        DOMbotonVaciar.addEventListener('click', vaciarCarrito);
+
+        // Inicio
+        renderizarProductos();
+        renderizarCarrito();
+        });
+    </script>
 </head>
 <body>
     <div class="principal">
@@ -59,7 +236,7 @@
             <div class="prod">
 
                 <h1 class="titulo tit1">Baumkuchen</h1>
-                <img src="img/baumkuchen.jpg" class="i1">
+                <img src="img/baumkuchen.png" class="i1">
                 <p class="p1">
                     <span>Descripción:</span><br><br>Está formado por capas finas y se acompaña con helado y chocolate caliente por encima.
 
@@ -74,21 +251,21 @@
 
                 <div class="brd2"><h1 class="titulo">Daifuku</h1></div>
 
-                <img src="img/daifuku.jpg" class="i3">
+                <img src="img/daifuku.png" class="i3">
                 <p class="p3">
                     <span>Descripción:</span><br><br>Conocido como “Mochi”, dulce popular en Japón. Relleno con judía roja. 
                 </p>
 
                 <div class="brd3"><h1 class="titulo">Dango</h1></div>
 
-                <img src="img/dango.jpg" class="i4">
+                <img src="img/dango.png" class="i4">
                 <p class="p4">
                     <span>Descripción:</span><br><br>Bolitas de harina de arroz, de distintos colores.
                 </p>
 
                 <div class="brd4"><h1 class="titulo">Dorayaki</h1></div>
 
-                <img src="img/dorayaki.jpg" class="i5">
+                <img src="img/dorayaki.png" class="i5">
                 <p class="p5">
                     <span>Descripción:</span><br><br>Bizcocho relleno con pasta de judías rojas.
                 </p>
@@ -102,14 +279,14 @@
 
                 <div class="brd6"><h1 class="titulo">Swiss Rolls</h1></div>
 
-                <img src="img/Swiss.jpg" class="i7">
+                <img src="img/Swiss.png" class="i7">
                 <p class="p7">
                     <span>Descripción:</span><br><br>Es un pastel alargado, enrollado y relleno. Arriba  se le pone mermelada o chocolate. 
                 </p>
 
                 <div class="brd7"><h1 class="titulo">Taiyaki</h1></div>
 
-                <img src="img/taiyaki.jpg" class="i8">
+                <img src="img/taiyaki.png" class="i8">
                 <p class="p8">
                     <span>Descripción:</span><br><br>Pastel en forma de pez, relleno con judías rojas o también una bola de helado. 
                 </p>
@@ -158,6 +335,23 @@
         </div>
 <!--.......................................................................................... -->
         
+        <div class="container">
+            <div class="row">
+                <!-- Elementos generados a partir del JSON -->
+                <main id="items" class="col-sm-8 row"></main>
+                <!-- Carrito -->
+                <aside class="col-sm-4">
+                    <h2>Carrito</h2>
+                    <!-- Elementos del carrito -->
+                    <ul id="carrito" class="list-group"></ul>
+                    <hr>
+                    <!-- Precio total -->
+                    <p class="text-right">Total: <span id="total"></span>&euro;</p>
+                    <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                </aside>
+            </div>
+        </div>
+
         <div class="nav1">
             <nav class="navMenu">
                 <ul>
@@ -168,6 +362,7 @@
                 </ul>
             </nav>
         </div>
+        
     </div>
 </body>
 </html>
