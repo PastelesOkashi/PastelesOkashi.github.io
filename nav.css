@@ -1,9 +1,9 @@
 ul {
-  list-style-type: none;
+  list-style-type: none!important;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  background-color: rgba(71,42,23,1);
+  overflow: hidden!important;
+  background-color: rgba(71,42,23,1)!important;
 }
 
 li {
@@ -12,12 +12,12 @@ li {
 
 li a {
   display: block;
-  color: white;
+  color: white!important;
   text-align: center;
   padding: 14px 16px;
-  text-decoration: none;
+  text-decoration: none!important;
 }
 
 li a:hover {
-  background-color: rgba(252,176,69,1);
+  background-color: rgba(252,176,69,1)!important;
 }

@@ -26,14 +26,14 @@
 }
 
 .prod > div {
-    border: solid 1px black;
-    width: 80%;
-    height: .5%;
-    margin: 3% auto;
+    border: solid 1px black!important;
+    width: 80%!important;
+    height: .5%!important;
+    margin: 3% auto!important;
 }
 .prod > div > .titulo, .prod > .tit1 {
-    margin-top: 2%;
-    color: burlywood;
+    margin-top: 2%!important;
+    color: burlywood!important;
 }
 .tit1 {
     grid-area: t1;

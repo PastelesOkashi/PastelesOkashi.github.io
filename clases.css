@@ -22,7 +22,7 @@
 
 }
 
-.nav1 {
+.nav_ {
 
     background-color: rgba(71,42,23,1);
     margin-bottom: 2%;
@@ -114,3 +114,6 @@
     text-align: start;
 }
 
+.hid {
+    display: none;
+}
