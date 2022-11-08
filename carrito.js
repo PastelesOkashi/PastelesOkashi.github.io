@@ -6,56 +6,64 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: 'BaumKuchen',
             precio: 2554,
             imagen: 'img/baumkuchen.png',
-            parrafo: 'Está formado por capas finas y se acompaña con helado y chocolate caliente por encima.'
+            parrafo: 'Está formado por capas finas y se acompaña con helado y chocolate caliente por encima.',
+            tipo: 1
         },
         {
             id: 2,
             nombre: 'Cheesecake',
             precio: 1740,
             imagen: 'img/cheesecake.jpg',
-            parrafo: 'Bizcocho muy suave y esponjoso.'
+            parrafo: 'Bizcocho muy suave y esponjoso.',
+            tipo: 1
         },
         {
             id: 3,
             nombre: 'Daifuku',
             precio: 296,
             imagen: 'img/daifuku.png',
-            parrafo: 'Conocido como “Mochi”, dulce popular en Japón. Relleno con judía roja.'
+            parrafo: 'Conocido como “Mochi”, dulce popular en Japón. Relleno con judía roja.',
+            tipo: 2
         },
         {
             id: 4,
             nombre: 'Dango',
             precio: 350,
             imagen: 'img/dango.png',
-            parrafo: 'Bolitas de harina de arroz, de distintos colores.'
+            parrafo: 'Bolitas de harina de arroz, de distintos colores.',
+            tipo: 2
         },
         {
             id: 5,
             nombre: 'Dorayaki',
             precio: 861,
             imagen: 'img/dorayaki.png',
-            parrafo: 'Bizcocho relleno con pasta de judías rojas.'
+            parrafo: 'Bizcocho relleno con pasta de judías rojas.',
+            tipo: 2
         },
         {
             id: 6,
             nombre: 'Namagashi',
             precio: 324,
             imagen: 'img/namagashi.jpg',
-            parrafo: 'Dulce agradable visualmente que se diseña según la estación del año.'
+            parrafo: 'Dulce agradable visualmente que se diseña según la estación del año.',
+            tipo: 2
         },
         {
             id: 7,
             nombre: 'Swiss Cake',
             precio: 1763,
             imagen: 'img/Swiss.png',
-            parrafo: 'Es un pastel alargado, enrollado y relleno. Arriba se le pone mermelada o chocolate.'
+            parrafo: 'Es un pastel alargado, enrollado y relleno. Arriba se le pone mermelada o chocolate.',
+            tipo: 1
         },
         {
             id: 8,
             nombre: 'Taiyaki',
             precio: 1255,
             imagen: 'img/taiyaki.png',
-            parrafo: 'Pastel en forma de pez, relleno con judías rojas o también una bola de helado.'
+            parrafo: 'Pastel en forma de pez, relleno con judías rojas o también una bola de helado.',
+            tipo: 3
         },
     ];
 
