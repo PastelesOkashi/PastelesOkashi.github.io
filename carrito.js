@@ -3,33 +3,64 @@ document.addEventListener('DOMContentLoaded', () => {
     const baseDeDatos = [
         {
             id: 1,
-            nombre: 'Patata',
-            precio: 1,
-            imagen: 'img/baumkuchen.jpg'
+            nombre: 'BaumKuchen',
+            precio: 2554,
+            imagen: 'img/baumkuchen.png',
+            parrafo: 'Está formado por capas finas y se acompaña con helado y chocolate caliente por encima.'
         },
         {
             id: 2,
-            nombre: 'Cebolla',
-            precio: 1.2,
-            imagen: 'img/cheesecake.jpg'
+            nombre: 'Cheesecake',
+            precio: 1740,
+            imagen: 'img/cheesecake.jpg',
+            parrafo: 'Bizcocho muy suave y esponjoso.'
         },
         {
             id: 3,
-            nombre: 'Calabacin',
-            precio: 2.1,
-            imagen: 'img/daifuku.jpg'
+            nombre: 'Daifuku',
+            precio: 296,
+            imagen: 'img/daifuku.png',
+            parrafo: 'Conocido como “Mochi”, dulce popular en Japón. Relleno con judía roja.'
         },
         {
             id: 4,
-            nombre: 'Fresas',
-            precio: 0.6,
-            imagen: 'img/dango.jpg'
-        }
-
+            nombre: 'Dango',
+            precio: 350,
+            imagen: 'img/dango.png',
+            parrafo: 'Bolitas de harina de arroz, de distintos colores.'
+        },
+        {
+            id: 5,
+            nombre: 'Dorayaki',
+            precio: 861,
+            imagen: 'img/Dorayaki.png',
+            parrafo: 'Bizcocho relleno con pasta de judías rojas.'
+        },
+        {
+            id: 6,
+            nombre: 'Namagashi',
+            precio: 324,
+            imagen: 'img/namagashi.jpg',
+            parrafo: 'Dulce agradable visualmente que se diseña según la estación del año.'
+        },
+        {
+            id: 7,
+            nombre: 'Swiss Cake',
+            precio: 1763,
+            imagen: 'img/Swiss.png',
+            parrafo: 'Es un pastel alargado, enrollado y relleno. Arriba se le pone mermelada o chocolate.'
+        },
+        {
+            id: 8,
+            nombre: 'Taiyaki',
+            precio: 1255,
+            imagen: 'img/taiyaki.png',
+            parrafo: 'Pastel en forma de pez, relleno con judías rojas o también una bola de helado.'
+        },
     ];
 
     let carrito = [];
-    const divisa = '€';
+    const divisa = '$';
     const DOMitems = document.querySelector('#items');
     const DOMcarrito = document.querySelector('#carrito');
     const DOMtotal = document.querySelector('#total');
@@ -60,6 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const miNodoPrecio = document.createElement('p');
             miNodoPrecio.classList.add('card-text');
             miNodoPrecio.textContent = `${info.precio}${divisa}`;
+            
+            const miNodoParrafo = document.createElement('p');
+            miNodoParrafo.classList.add('card-text');
+            miNodoParrafo.textContent = `${info.parrafo}`;
             // Boton 
             const miNodoBoton = document.createElement('button');
             miNodoBoton.classList.add('btn', 'btn-primary');
@@ -69,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Insertamos
             miNodoCardBody.appendChild(miNodoImagen);
             miNodoCardBody.appendChild(miNodoTitle);
+            miNodoCardBody.appendChild(miNodoParrafo);
             miNodoCardBody.appendChild(miNodoPrecio);
             miNodoCardBody.appendChild(miNodoBoton);
             miNodo.appendChild(miNodoCardBody);

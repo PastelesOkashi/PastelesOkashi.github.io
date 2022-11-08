@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>Pasteles Okashi</title>
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="nav.css">
-    <link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="clases.css">
+    <link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="template.css">
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
 
@@ -125,37 +126,26 @@
         </div>
 
         <div class="hid templateCords" id="c1">
-            <!DOCTYPE html>
-            <html lang="es">
-                <head>
-                    <meta charset="UTF-8">
-                    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-                </head>
-                <body>
-                    <div>
-                        <div class="container">
-                            <div class="row">
-                                <!-- Elementos generados a partir del JSON -->
-                                <main id="items" class="col-sm-8 row"></main>
-                                <!-- Carrito -->
-                                <aside class="col-sm-4">
-                                    <h2>Carrito</h2>
-                                    <!-- Elementos del carrito -->
-                                    <ul id="carrito" class="list-group"></ul>
-                                    <hr>
-                                    <!-- Precio total -->
-                                    <p class="text-right">Total: <span id="total"></span>&euro;</p>
-                                    <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
-                                </aside>
-                            </div>
-                        </div>
-                    </div>
-                </body>
-            </html>
+            <div class="container">
+                <div class="row">
+                    <!-- Elementos generados a partir del JSON -->
+                    <main id="items" class="col-sm-8 row"></main>
+                    <!-- Carrito -->
+                    <aside class="col-sm-4">
+                        <h2>Carrito</h2>
+                        <!-- Elementos del carrito -->
+                        <ul id="carrito" class="list-group"></ul>
+                        <hr>
+                        <!-- Precio total -->
+                        <p class="text-right">Total: <span id="total"></span></p>
+                        <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                    </aside>
+                </div>
+            </div>
         </div>
 
 
-        <div class="local templateCords" id="c2"> /*agregar metro cercano  agregar pincha aquí en ig*/
+        <div class="local templateCords" id="c2"> <!--agregar metro cercano  agregar pincha aquí en ig -->
 
             <div class="mapa">
                 <h1>Mapa</h1>
