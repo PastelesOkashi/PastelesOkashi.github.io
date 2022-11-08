@@ -128,3 +128,6 @@
 .list-group-item  {
     background-color: rgb(255, 255, 255);
 }
+.list-group-item, .mx-2 {
+    display:inline;
+}
