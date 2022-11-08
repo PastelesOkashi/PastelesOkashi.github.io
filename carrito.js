@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 5,
             nombre: 'Dorayaki',
             precio: 861,
-            imagen: 'img/Dorayaki.png',
+            imagen: 'img/dorayaki.png',
             parrafo: 'Bizcocho relleno con pasta de judías rojas.'
         },
         {
